@@ -1,0 +1,6 @@
+data = pd.DataFrame({
+    'Age_Group': ['Young', 'Young', 'Young', 'Middle', 'Middle', 'Middle', 'Old', 'Old', 'Old'],
+    'Income_Level': ['Low', 'Medium', 'High', 'Low', 'Medium', 'High', 'Low', 'Medium', 'High'],
+    'Purchase_High': [10, 20, 30, 15, 25, 40, 5, 10, 20],
+    'Purchase_Low': [40, 30, 20, 35, 25, 10, 45, 40, 30]
+})

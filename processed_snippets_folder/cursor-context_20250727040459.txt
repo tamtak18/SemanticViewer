@@ -1,0 +1,7 @@
+# p 値を計算（上側確率）
+p_value = 1 - chi2.cdf(chi2_value, degrees_of_freedom)
+
+# 結果を表示
+print(f'カイ二乗値: {chi2_value}')
+print(f'自由度: {degrees_of_freedom}')
+print(f'p 値: {p_value}')

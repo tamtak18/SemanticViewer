@@ -1,0 +1,4 @@
+# 喫煙と肺がんの単純な回帰分析（交絡因子を制御しない）
+model_simple = sm.OLS(data['lung_cancer'], sm.add_constant(data['smoking'])).fit()
+print("単純な回帰分析の結果：")
+print(model_simple.summary())

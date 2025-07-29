@@ -1,0 +1,17 @@
+# データ型を適切に変換
+X = X.astype(float)
+y = y.astype(int)
+
+# トレーニングセットとテストセットに分割
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# 決定木モデルの構築
+model = DecisionTreeClassifier(max_depth=7, random_state=42)
+model.fit(X_train, y_train)
+
+# モデルの予測
+y_pred = model.predict(X_test)
+
+# モデルの評価
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+print("\nClassification Report:\n", classification_report(y_test, y_pred))

@@ -1,0 +1,6 @@
+    'clf__criterion': ['gini', 'entropy'],
+    'clf__splitter': ['best', 'random'],
+    'clf__max_depth': [3, 5, 10],
+    'clf__min_samples_split': [2, 10, 20],
+    'clf__min_samples_leaf': [1, 5, 10]
+}

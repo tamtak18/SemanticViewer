@@ -1,0 +1,5 @@
+N = 1000  # サンプル数
+age = np.random.randint(18, 80, size=N)  # 18歳から80歳までのランダムな年齢データ
+smoking = np.random.binomial(1, 0.3, size=N)  # 30%の人が喫煙者
+diet = np.random.randint(1, 4, size=N)  # 食事の質（1から3のランク）
+exercise = np.random.randint(0, 5, size=N)  # 週に何回運動するか

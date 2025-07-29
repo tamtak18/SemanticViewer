@@ -1,0 +1,12 @@
+# 年齢を20歳から80歳の範囲でランダムに生成
+ages = np.random.randint(20, 80, n_samples)
+
+# 年齢に基づいてワクチン接種の確率を設定（高齢者の方がワクチン接種率が非常に高い）
+vaccination_prob = np.clip((ages - 20) * 0.03, 0, 0.95)
+vaccinated = np.random.binomial(1, vaccination_prob)
+
+# 性別をランダムに生成 (0: 女性, 1: 男性)
+gender = np.random.choice([0, 1], n_samples)
+
+# 基礎疾患の有無をランダムに生成 (0: 無し, 1: 有り)
+comorbidities = np.random.choice([0, 1], n_samples, p=[0.7, 0.3])

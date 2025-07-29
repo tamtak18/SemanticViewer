@@ -1,0 +1,15 @@
+N = 1000  # サンプル数
+age = np.random.randint(18, 80, size=N)  # 18歳から80歳までのランダムな年齢データ
+smoking = np.random.binomial(1, 0.3, size=N)  # 30%の人が喫煙者
+diet = np.random.randint(1, 4, size=N)  # 食事の質（1から3のランク）
+exercise = np.random.randint(0, 5, size=N)  # 週に何回運動するか
+lung_cancer = 0.1 * age + 3 * smoking + 0.5 * diet - 1 * exercise + np.random.normal(0, 10, size=N)  # 肺がんの発生率
+
+# データをデータフレームに変換
+data = pd.DataFrame({'age': age, 'smoking': smoking, 'diet': diet, 'exercise': exercise, 'lung_cancer': lung_cancer})
+
+# 年齢、食事、運動習慣、喫煙の相互作用項を含めた回帰分析
+data['smoking_age_interaction'] = data['smoking'] * data['age']
+model = sm.OLS(data['lung_cancer'], sm.add_constant(data[['age', 'smoking', 'diet', 'exercise', 'smoking_age_interaction']])).fit()
+print("改善された回帰分析の結果：")
+print(model.summary())

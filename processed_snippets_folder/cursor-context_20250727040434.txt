@@ -1,0 +1,10 @@
+# x軸の範囲
+x = np.linspace(0, 20, 1000)
+
+# 線のスタイル（色と線種）を5通り指定
+styles = [
+    {'color': 'black', 'linestyle': '-'},      # 実線・黒
+    {'color': 'black', 'linestyle': '--'},     # 破線・黒
+    {'color': 'gray',  'linestyle': '-.'},     # 一点鎖線・グレー
+    {'color': 'gray',  'linestyle': ':'},      # 点線・グレー
+    {'color': 'dimgray', 'linestyle': (0, (3, 1, 1, 1))}  # カスタム破線・濃いグレー

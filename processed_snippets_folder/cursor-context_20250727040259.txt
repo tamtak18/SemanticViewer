@@ -1,0 +1,7 @@
+# クラス名を動的に取得
+class_names = [str(cls) for cls in model.classes_]
+
+# 決定木の可視化
+plt.figure(figsize=(20,10))
+tree.plot_tree(model, feature_names=X.columns.tolist(), class_names=class_names, filled=True)
+plt.show()

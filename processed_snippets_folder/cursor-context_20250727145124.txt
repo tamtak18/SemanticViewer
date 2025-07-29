@@ -1,0 +1,13 @@
+# サンプルデータの設定：年齢層と購入意欲
+data = pd.DataFrame({
+    'Age_Group': ['Young', 'Young', 'Young', 'Middle', 'Middle', 'Middle', 'Old', 'Old', 'Old'],
+    'Income_Level': ['Low', 'Medium', 'High', 'Low', 'Medium', 'High', 'Low', 'Medium', 'High'],
+    'Purchase_High': [10, 20, 30, 15, 25, 40, 5, 10, 20],
+    'Purchase_Low': [40, 30, 20, 35, 25, 10, 45, 40, 30]
+})
+
+# カイ二乗検定を行う関数
+def compute_chi2(data, feature, target_high, target_low):
+    contingency_table = pd.crosstab(data[feature], [data[target_high], data[target_low]])
+    chi2, p, dof, expected = chi2_contingency(contingency_table)
+    return chi2, p

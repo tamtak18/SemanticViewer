@@ -1,0 +1,15 @@
+# 混同行列をヒートマップとして表示
+print('Decision Tree Confusion Matrix:')
+plt.figure(figsize=(8, 6))
+sns.heatmap(conf_matrix_dt, annot=labels, fmt='', cmap='Wistia', cbar=False, 
+            xticklabels=['Non-Severe', 'Severe'], yticklabels=['Non-Severe', 'Severe'], 
+            annot_kws={"color": "black", "fontsize": 16})
+plt.xticks(fontsize=16)
+plt.yticks(fontsize=16)
+plt.xlabel('Predicted', fontsize=16)
+plt.ylabel('Actual', fontsize=16)
+plt.title('Decision Tree Confusion Matrix', fontsize=16)
+# SVG形式で保存
+confusion_matrix_svg_path = os.path.join(output_dir, "confusion_matrix.svg")
+plt.savefig(confusion_matrix_svg_path, format='svg')
+print(f"Confusion matrix saved to: {confusion_matrix_svg_path}")

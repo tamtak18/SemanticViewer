@@ -1,0 +1,1 @@
+lung_cancer = 0.1 * age + 3 * smoking + np.random.normal(0, 10, size=N)

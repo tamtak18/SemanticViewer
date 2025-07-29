@@ -1,0 +1,12 @@
+# シードを固定して再現性を確保
+np.random.seed(0)
+
+# サンプルデータの生成
+n_samples = 10000
+
+# 年齢を20歳から80歳の範囲でランダムに生成
+ages = np.random.randint(20, 80, n_samples)
+
+# 年齢に基づいてワクチン接種の確率を設定（高齢者の方がワクチン接種率が非常に高い）
+vaccination_prob = np.clip((ages - 20) * 0.03, 0, 0.95)
+vaccinated = np.random.binomial(1, vaccination_prob)

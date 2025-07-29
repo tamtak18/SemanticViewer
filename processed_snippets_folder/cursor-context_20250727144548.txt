@@ -1,0 +1,4 @@
+N = 1000  # サンプル数
+age = np.random.randint(18, 80, size=N)  # 18歳から80歳までのランダムな年齢データ
+smoking = np.random.binomial(1, 0.3, size=N)  # 30%の人が喫煙者
+lung_cancer = 0.1 * age + 3 * smoking + np.random.normal(0, 10, size=N)  # 肺がんの発生率（年齢と喫煙の影響を含む）
